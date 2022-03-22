@@ -29,9 +29,19 @@ class RandomCardWidget extends StatelessWidget {
                         carryImageWidget(url: data?.strMealThumb ?? ''),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.black.withOpacity(0.5),
                             borderRadius: const BorderRadius.all(
                               Radius.circular(20),
+                            ),
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Colors.white.withOpacity(0),
+                                Colors.white.withOpacity(0),
+                                Colors.white.withOpacity(0),
+                                Colors.black.withOpacity(0.2),
+                                Colors.black.withOpacity(0.5)
+                              ],
                             ),
                           ),
                           child: Column(
