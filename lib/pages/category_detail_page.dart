@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal/widgets/common.dart';
+import 'package:meal/widgets/recommend_card.dart';
 
 class CategoryDetailPage extends StatelessWidget {
   final String strCategory;
@@ -44,6 +45,15 @@ class CategoryDetailPage extends StatelessWidget {
             text: strCategoryDescription,
             padding: const EdgeInsets.all(10),
           ),
+          const SizedBox(height: 20),
+          flexibleText(
+            text: 'About $strCategory',
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+            padding: const EdgeInsets.all(15),
+            alignment: Alignment.topLeft,
+          ),
+          RecommendCardWidget(inputText: strCategory),
         ],
       ),
     );
