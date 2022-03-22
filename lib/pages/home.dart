@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/providers/page.dart';
+import 'package:meal/widgets/common.dart';
+import 'package:meal/widgets/random_card.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,10 +11,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Widget> _children = [
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    ListView(
       children: [
-        Center(child: Text('Home')),
+        const SizedBox(height: 40),
+        flexibleText(
+          text: 'Home',
+          fontSize: 40,
+          fontWeight: FontWeight.bold,
+          padding: const EdgeInsets.all(15),
+          alignment: Alignment.topLeft,
+        ),
+        RandomCardWidget(),
       ],
     ),
     Column(
