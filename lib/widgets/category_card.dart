@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/category.dart';
+import 'package:meal/pages/categor_detail_page.dart';
 import 'package:meal/services/api.dart';
 import 'package:meal/widgets/common.dart';
 
@@ -23,7 +24,19 @@ class CategoryCardWidget extends StatelessWidget {
               return Transform.scale(
                 scale: 0.9,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CategoryDetailPage(
+                          strCategory: data?.strCategory ?? '',
+                          strCategoryThumb: data?.strCategoryThumb ?? '',
+                          strCategoryDescription:
+                              data?.strCategoryDescription ?? '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
