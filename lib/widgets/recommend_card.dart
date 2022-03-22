@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/meal.dart';
+import 'package:meal/pages/detail_page.dart';
 import 'package:meal/services/api.dart';
 import 'package:meal/widgets/common.dart';
 
@@ -29,14 +30,23 @@ class RecommendCardWidget extends StatelessWidget {
               return Transform.scale(
                 scale: 0.9,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPage(
+                          id: data?.idMeal ?? '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
                       carryImageWidget(url: data?.strMealThumb ?? ''),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withOpacity(0.4),
                           borderRadius: const BorderRadius.all(
                             Radius.circular(20),
                           ),

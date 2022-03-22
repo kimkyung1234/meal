@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/meal.dart';
+import 'package:meal/pages/detail_page.dart';
 import 'package:meal/services/api.dart';
 import 'package:meal/widgets/common.dart';
 
@@ -22,7 +23,16 @@ class RandomCardWidget extends StatelessWidget {
                 child: Transform.scale(
                   scale: 0.9,
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                            id: data?.idMeal ?? '',
+                          ),
+                        ),
+                      );
+                    },
                     child: Stack(
                       fit: StackFit.expand,
                       children: [
