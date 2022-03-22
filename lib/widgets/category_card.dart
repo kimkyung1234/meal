@@ -53,7 +53,7 @@ class CategoryCardWidget extends StatelessWidget {
                           children: [
                             flexibleText(
                               text: data?.strCategory ?? '',
-                              fontSize: 25,
+                              fontSize: 30,
                               textColor: Colors.white,
                               fontWeight: FontWeight.bold,
                               alignment: Alignment.topLeft,
