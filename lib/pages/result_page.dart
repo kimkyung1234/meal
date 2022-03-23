@@ -30,7 +30,7 @@ class ResultPage extends StatelessWidget {
         future: getMealDataByInputText(inputText: inputText),
         builder: (_, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(child: customCircularIndicator());
           } else if (snapshot.data?.lists?.length == null) {
             return Center(
                 child: flexibleText(

@@ -53,3 +53,13 @@ Future<Meal> getMealDataByInputText({required String inputText}) async {
     throw Exception("Error loading news");
   }
 }
+
+// Future<Meal> getMealDataByInputText({required String inputText}) async {
+//   final response = await get(Uri.parse(
+//       'https://www.themealdb.com/api/json/v1/1/search.php?s=$inputText'));
+//   if (response.statusCode == 200) {
+//     return Meal.fromJson(jsonDecode(response.body));
+//   } else {
+//     throw Exception("Error loading news");
+//   }
+// }

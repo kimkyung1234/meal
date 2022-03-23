@@ -23,7 +23,7 @@ class CategoryCardWidget extends StatelessWidget {
               final data = snapshot.data?.categories?[index];
               return Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 width: MediaQuery.of(context).size.width * 0.6,
                 child: GestureDetector(
                   onTap: () {
