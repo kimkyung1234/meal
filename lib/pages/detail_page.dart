@@ -52,6 +52,12 @@ class DetailPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10, top: 10),
                 alignment: Alignment.topLeft,
               ),
+              flexibleText(
+                text: 'Area : ${data?.strArea}',
+                fontSize: 13,
+                padding: const EdgeInsets.only(left: 10),
+                alignment: Alignment.topLeft,
+              ),
               customDivider(),
               flexibleText(
                 text: data?.strInstructions ?? 'No data',

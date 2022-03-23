@@ -3,6 +3,7 @@ import 'package:meal/providers/page.dart';
 import 'package:meal/widgets/category_card.dart';
 import 'package:meal/widgets/common.dart';
 import 'package:meal/widgets/random_card.dart';
+import 'package:meal/widgets/search_widget.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,9 +35,17 @@ class _HomePageState extends State<HomePage> {
       ],
     ),
     Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(child: Text('Search')),
+        const SizedBox(height: 120),
+        flexibleText(
+          text: 'Search',
+          padding: const EdgeInsets.all(15),
+          alignment: Alignment.topLeft,
+          fontWeight: FontWeight.bold,
+          fontSize: 40,
+        ),
+        const SizedBox(height: 30),
+        SearchWidget(),
       ],
     ),
   ];
