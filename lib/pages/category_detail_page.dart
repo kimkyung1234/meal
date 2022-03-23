@@ -38,7 +38,7 @@ class CategoryDetailPage extends StatelessWidget {
           const SizedBox(height: 10),
           flexibleText(
             text: strCategoryDescription,
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(5),
           ),
           const SizedBox(height: 10),
           flexibleText(

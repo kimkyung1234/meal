@@ -17,7 +17,7 @@ class RecommendCardWidget extends StatelessWidget {
       future: getMealDataByCategory(inputText: inputText),
       builder: (_, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
+          return Center(child: customCircularIndicator());
         }
 
         return SizedBox(

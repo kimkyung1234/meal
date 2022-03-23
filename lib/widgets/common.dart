@@ -23,6 +23,7 @@ Widget carryImageWidget(
         margin: const EdgeInsets.fromLTRB(0, 50, 0, 50),
         child: Center(
           child: CircularProgressIndicator(
+            valueColor: const AlwaysStoppedAnimation<Color>(Colors.orange),
             value: loadingProgress.expectedTotalBytes != null
                 ? loadingProgress.cumulativeBytesLoaded /
                     loadingProgress.expectedTotalBytes!
@@ -57,5 +58,21 @@ Widget flexibleText({
         ),
       ),
     ),
+  );
+}
+
+Widget customDivider() {
+  return const Padding(
+    padding: EdgeInsets.fromLTRB(10, 15, 10, 5),
+    child: Divider(
+      height: 10,
+      color: Colors.black,
+    ),
+  );
+}
+
+Widget customCircularIndicator() {
+  return const CircularProgressIndicator(
+    valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
   );
 }

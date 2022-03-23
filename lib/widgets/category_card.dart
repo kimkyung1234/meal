@@ -11,7 +11,7 @@ class CategoryCardWidget extends StatelessWidget {
       future: getCategoryData(),
       builder: (_, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
+          return Center(child: customCircularIndicator());
         }
 
         return SizedBox(

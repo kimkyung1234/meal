@@ -29,7 +29,7 @@ class DetailPage extends StatelessWidget {
         future: getMealDataById(id: id),
         builder: (_, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(child: customCircularIndicator());
           }
           final data = snapshot.data?.lists?[0];
           return ListView(
@@ -40,14 +40,23 @@ class DetailPage extends StatelessWidget {
                 radius: 0,
               ),
               flexibleText(
-                text: 'Category : ${data?.strCategory}',
-                fontSize: 13,
-                padding: const EdgeInsets.only(left: 10, top: 20),
+                text: data?.strMeal ?? '',
+                fontWeight: FontWeight.bold,
+                fontSize: 28,
                 alignment: Alignment.topLeft,
+                padding: const EdgeInsets.only(left: 10, top: 20),
               ),
               flexibleText(
+                text: 'Category : ${data?.strCategory}',
+                fontSize: 13,
+                padding: const EdgeInsets.only(left: 10, top: 10),
+                alignment: Alignment.topLeft,
+              ),
+              customDivider(),
+              flexibleText(
                 text: data?.strInstructions ?? 'No data',
-                padding: const EdgeInsets.all(10),
+                textColor: Colors.black87,
+                padding: const EdgeInsets.all(5),
               ),
             ],
           );
