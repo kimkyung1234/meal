@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal/providers/page.dart';
+import 'package:meal/widgets/area_card.dart';
 import 'package:meal/widgets/category_card.dart';
 import 'package:meal/widgets/common.dart';
 import 'package:meal/widgets/random_card.dart';
@@ -24,6 +25,14 @@ class _HomePageState extends State<HomePage> {
           alignment: Alignment.topLeft,
         ),
         RandomCardWidget(),
+        flexibleText(
+          text: 'Area',
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
+          padding: const EdgeInsets.all(15),
+          alignment: Alignment.topLeft,
+        ),
+        AreaCardWidget(),
         flexibleText(
           text: 'Category',
           fontSize: 28,

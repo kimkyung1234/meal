@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:meal/pages/home.dart';
 import 'package:meal/providers/page.dart';
 import 'package:provider/provider.dart';
@@ -17,6 +18,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<Pages>(create: (_) => Pages()),
       ],
       child: MaterialApp(
+        theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
+        )),
         debugShowCheckedModeBanner: false,
         home: HomePage(),
       ),
