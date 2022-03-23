@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/meal.dart';
+import 'package:meal/pages/area_page.dart';
 import 'package:meal/services/api.dart';
 import 'package:meal/widgets/common.dart';
 
@@ -25,7 +26,16 @@ class AreaCardWidget extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                 width: 180,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AreaPage(
+                          area: data?.strArea ?? '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Stack(
                     fit: StackFit.expand,
                     children: [

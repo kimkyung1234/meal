@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _children = [
     ListView(
       children: [
-        const SizedBox(height: 40),
+        const SizedBox(height: 20),
         flexibleText(
           text: 'Home',
           fontSize: 40,

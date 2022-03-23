@@ -64,6 +64,14 @@ class DetailPage extends StatelessWidget {
                 textColor: Colors.black87,
                 padding: const EdgeInsets.all(5),
               ),
+              /*flexibleText(
+                text: 'Related to ${data?.strCategory}',
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                padding: const EdgeInsets.all(15),
+                alignment: Alignment.topLeft,
+              ),
+              RecommendCardWidget(inputText: data?.strCategory ?? ''),*/
             ],
           );
         },
