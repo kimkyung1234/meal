@@ -14,7 +14,64 @@ class CategoryCardWidget extends StatelessWidget {
           return Center(child: customCircularIndicator());
         }
 
-        return SizedBox(
+        return Container(
+          height: MediaQuery.of(context).size.height * 0.35,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: snapshot.data?.categories?.length ?? 0,
+            itemBuilder: (context, index) {
+              final data = snapshot.data?.categories?[index];
+              return Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+                width: MediaQuery.of(context).size.width * 0.6,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CategoryDetailPage(
+                          strCategory: data?.strCategory ?? '',
+                          strCategoryThumb: data?.strCategoryThumb ?? '',
+                          strCategoryDescription:
+                              data?.strCategoryDescription ?? '',
+                        ),
+                      ),
+                    );
+                  },
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      carryImageWidget(url: data?.strCategoryThumb ?? ''),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.5),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            flexibleText(
+                              text: data?.strCategory ?? '',
+                              fontSize: 20,
+                              textColor: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              alignment: Alignment.topLeft,
+                              padding: const EdgeInsets.all(20),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        );
+        /*return SizedBox(
           height: 300,
           child: PageView.builder(
             itemCount: snapshot.data?.categories?.length ?? 0,
@@ -68,7 +125,7 @@ class CategoryCardWidget extends StatelessWidget {
               );
             },
           ),
-        );
+        );*/
       },
     );
   }
