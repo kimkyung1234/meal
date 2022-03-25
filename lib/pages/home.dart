@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meal/pages/list.dart';
 import 'package:meal/providers/page.dart';
 import 'package:meal/widgets/area_card.dart';
+import 'package:meal/widgets/bookmark_list.dart';
 import 'package:meal/widgets/category_card.dart';
 import 'package:meal/widgets/common.dart';
 import 'package:meal/widgets/random_card.dart';
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
         CategoryCardWidget(),
       ],
     ),
-    list(),
+    BookmarkList(),
     Column(children: [
       const SizedBox(height: 120),
       flexibleText(

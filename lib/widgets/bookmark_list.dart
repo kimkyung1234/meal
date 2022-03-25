@@ -3,31 +3,22 @@ import 'package:meal/models/bookmark.dart';
 import 'package:meal/pages/detail_page.dart';
 import 'package:meal/services/db_helper.dart';
 import 'package:meal/widgets/common.dart';
-// import 'package:meal/models/category.dart';
-// import 'package:meal/pages/category_detail_page.dart';
-// import 'package:meal/services/api.dart';
-// import 'package:meal/widgets/common.dart';
 import 'package:provider/provider.dart';
 
-class list extends StatelessWidget {
+class BookmarkList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<DatabaseHelper>(context);
 
     return Column(
       children: [
-        const SizedBox(height: 120),
-        RaisedButton(
-          onPressed: () {
-            provider.deleteAllBookmark();
-          },
-          child: Text('delete'),
-        ), // 52952
-        RaisedButton(
-          onPressed: () {
-            provider.test(789);
-          },
-          child: Text('test'),
+        const SizedBox(height: 60),
+        flexibleText(
+          text: 'Bookmark',
+          fontSize: 40,
+          fontWeight: FontWeight.bold,
+          padding: const EdgeInsets.all(15),
+          alignment: Alignment.topLeft,
         ),
         Expanded(
           child: FutureBuilder(
@@ -36,6 +27,8 @@ class list extends StatelessWidget {
                 (BuildContext context, AsyncSnapshot<List<Bookmark>> snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(child: customCircularIndicator());
+              } else if (!snapshot.hasData) {
+                return const Center(child: Text('No bookmark'));
               }
               return ListView.separated(
                 separatorBuilder: (context, index) =>
@@ -47,10 +40,16 @@ class list extends StatelessWidget {
                   return Dismissible(
                     direction: DismissDirection.endToStart,
                     background: Container(
-                      color: Colors.red,
                       alignment: Alignment.centerRight,
                       padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: const Icon(Icons.delete_forever),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Icon(
+                        Icons.delete_outline,
+                        color: Colors.white,
+                      ),
                     ),
                     key: ValueKey<int>(snapshot.data![index].id),
                     onDismissed: (DismissDirection direction) async {

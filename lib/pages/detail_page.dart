@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meal/models/bookmark.dart';
 import 'package:meal/models/meal.dart';
 import 'package:meal/services/api.dart';
-import 'package:meal/services/db_helper.dart';
+import 'package:meal/widgets/bookmark_button.dart';
 import 'package:meal/widgets/common.dart';
-import 'package:provider/provider.dart';
 
 class DetailPage extends StatelessWidget {
   final String id;
@@ -15,8 +13,6 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<DatabaseHelper>(context);
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -39,8 +35,6 @@ class DetailPage extends StatelessWidget {
           final data = snapshot.data?.lists?[0];
           var id = int.parse(data?.idMeal ?? '');
           assert(id is int);
-          var check = provider.test(id);
-          print(check);
 
           return ListView(
             children: [
@@ -76,49 +70,7 @@ class DetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // IconButton(
-                  //   onPressed: () {
-                  //     provider.insertBookmark([
-                  //       Bookmark(
-                  //         id: id,
-                  //         url: data?.strMealThumb ?? '',
-                  //         name: data?.strMeal ?? '',
-                  //       )
-                  //     ]);
-                  //   },
-                  //   icon: const Icon(Icons.bookmark_border),
-                  // ),
-
-                  // ignore: unrelated_type_equality_checks
-
-                  FutureBuilder<bool>(
-                    future: provider.test(id),
-                    builder: (_, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Center(child: customCircularIndicator());
-                      }
-                      if (snapshot.data == true) {
-                        return IconButton(
-                          onPressed: () {
-                            provider.deleteBookmark(id);
-                          },
-                          icon: const Icon(Icons.bookmark),
-                        );
-                      }
-                      return IconButton(
-                        onPressed: () {
-                          provider.insertBookmark([
-                            Bookmark(
-                              id: id,
-                              url: data?.strMealThumb ?? '',
-                              name: data?.strMeal ?? '',
-                            )
-                          ]);
-                        },
-                        icon: const Icon(Icons.bookmark_border),
-                      );
-                    },
-                  ),
+                  BookmarkButton(id: id, data: data),
                 ],
               ),
               customDivider(),
