@@ -36,7 +36,8 @@ class BookmarkList extends StatelessWidget {
                 padding: const EdgeInsets.all(18),
                 itemCount: snapshot.data?.length ?? 0,
                 itemBuilder: (_, index) {
-                  final data = snapshot.data?[index];
+                  var list = snapshot.data?.reversed.toList();
+                  final data = list?[index];
                   return Dismissible(
                     direction: DismissDirection.endToStart,
                     background: Container(

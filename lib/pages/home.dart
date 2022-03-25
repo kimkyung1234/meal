@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:meal/providers/page.dart';
-import 'package:meal/widgets/area_card.dart';
-import 'package:meal/widgets/bookmark_list.dart';
-import 'package:meal/widgets/category_card.dart';
+import 'package:meal/widgets/card/area_card.dart';
+import 'package:meal/widgets/card/bookmark_list.dart';
+import 'package:meal/widgets/card/category_card.dart';
+import 'package:meal/widgets/card/random_card.dart';
 import 'package:meal/widgets/common.dart';
-import 'package:meal/widgets/random_card.dart';
 import 'package:meal/widgets/search_widget.dart';
-// import 'package:meal/widgets/search_widget.dart';
-// import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {

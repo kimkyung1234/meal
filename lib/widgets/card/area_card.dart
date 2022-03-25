@@ -14,7 +14,7 @@ class AreaCardWidget extends StatelessWidget {
           return Center(child: customCircularIndicator());
         }
 
-        return Container(
+        return SizedBox(
           height: 85,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
