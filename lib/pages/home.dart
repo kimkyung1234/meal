@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:meal/pages/list.dart';
 import 'package:meal/providers/page.dart';
 import 'package:meal/widgets/area_card.dart';
 import 'package:meal/widgets/category_card.dart';
 import 'package:meal/widgets/common.dart';
 import 'package:meal/widgets/random_card.dart';
 import 'package:meal/widgets/search_widget.dart';
+// import 'package:meal/widgets/search_widget.dart';
+// import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,20 +46,19 @@ class _HomePageState extends State<HomePage> {
         CategoryCardWidget(),
       ],
     ),
-    Column(
-      children: [
-        const SizedBox(height: 120),
-        flexibleText(
-          text: 'Search',
-          padding: const EdgeInsets.all(15),
-          alignment: Alignment.topLeft,
-          fontWeight: FontWeight.bold,
-          fontSize: 40,
-        ),
-        const SizedBox(height: 30),
-        SearchWidget(),
-      ],
-    ),
+    list(),
+    Column(children: [
+      const SizedBox(height: 120),
+      flexibleText(
+        text: 'Search',
+        padding: const EdgeInsets.all(15),
+        alignment: Alignment.topLeft,
+        fontWeight: FontWeight.bold,
+        fontSize: 40,
+      ),
+      const SizedBox(height: 30),
+      SearchWidget(),
+    ]),
   ];
 
   @override
@@ -79,6 +81,10 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bookmark),
+            title: Text('Bookmark'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
