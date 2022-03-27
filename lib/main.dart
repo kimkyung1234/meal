@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:meal/pages/home.dart';
+import 'package:meal/providers/db_helper.dart';
 import 'package:meal/providers/page.dart';
-import 'package:meal/services/db_helper.dart';
 import 'package:provider/provider.dart';
 
 void main() {

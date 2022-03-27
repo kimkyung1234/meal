@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/bookmark.dart';
 import 'package:meal/models/meal.dart';
-import 'package:meal/services/db_helper.dart';
+import 'package:meal/providers/db_helper.dart';
 import 'package:meal/widgets/common.dart';
 import 'package:provider/provider.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/bookmark.dart';
 import 'package:meal/pages/detail_page.dart';
-import 'package:meal/services/db_helper.dart';
+import 'package:meal/providers/db_helper.dart';
 import 'package:meal/widgets/common.dart';
 import 'package:provider/provider.dart';
 
@@ -27,8 +27,12 @@ class BookmarkList extends StatelessWidget {
                 (BuildContext context, AsyncSnapshot<List<Bookmark>> snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(child: customCircularIndicator());
-              } else if (!snapshot.hasData) {
-                return const Center(child: Text('No bookmark'));
+              } else if (snapshot.data?.length == 0) {
+                return Center(
+                    child: flexibleText(
+                  text: 'No Bookmark',
+                  fontWeight: FontWeight.bold,
+                ));
               }
               return ListView.separated(
                 separatorBuilder: (context, index) =>
@@ -36,8 +40,9 @@ class BookmarkList extends StatelessWidget {
                 padding: const EdgeInsets.all(18),
                 itemCount: snapshot.data?.length ?? 0,
                 itemBuilder: (_, index) {
-                  var list = snapshot.data?.reversed.toList();
-                  final data = list?[index];
+                  // var list = snapshot.data?.reversed.toList();
+                  // final data = list?[index];
+                  var data = snapshot.data?[index];
                   return Dismissible(
                     direction: DismissDirection.endToStart,
                     background: Container(
