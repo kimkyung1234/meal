@@ -20,7 +20,7 @@ Future<Category> getCategoryData() async {
   if (response.statusCode == 200) {
     return Category.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception("Error loading news");
+    throw Exception("Error loading");
   }
 }
 
@@ -30,7 +30,7 @@ Future<Meal> getMealDataByCategory({required String inputText}) async {
   if (response.statusCode == 200) {
     return Meal.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception("Error loading news");
+    throw Exception("Error loading");
   }
 }
 
@@ -40,7 +40,7 @@ Future<Meal> getMealDataById({required String id}) async {
   if (response.statusCode == 200) {
     return Meal.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception("Error loading news");
+    throw Exception("Error loading");
   }
 }
 
@@ -50,7 +50,7 @@ Future<Meal> getMealDataByInputText({required String inputText}) async {
   if (response.statusCode == 200) {
     return Meal.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception("Error loading news");
+    throw Exception("Error loading");
   }
 }
 
@@ -60,7 +60,7 @@ Future<Meal> getAreaList() async {
   if (response.statusCode == 200) {
     return Meal.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception("Error loading news");
+    throw Exception("Error loading");
   }
 }
 
@@ -70,6 +70,6 @@ Future<Meal> getMealDataByArea({required String area}) async {
   if (response.statusCode == 200) {
     return Meal.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception("Error loading news");
+    throw Exception("Error loading");
   }
 }
