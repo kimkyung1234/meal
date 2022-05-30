@@ -3,6 +3,8 @@ import 'package:meal/models/meal.dart';
 import 'package:meal/services/api.dart';
 import 'package:meal/widgets/bookmark_button.dart';
 import 'package:meal/widgets/common.dart';
+import 'package:meal/widgets/youtube_player.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class DetailPage extends StatelessWidget {
   final String id;
@@ -79,6 +81,12 @@ class DetailPage extends StatelessWidget {
                 textColor: Colors.black87,
                 padding: const EdgeInsets.all(5),
               ),
+              const SizedBox(height: 25),
+              data!.strYouTube == null
+                  ? const SizedBox()
+                  : Player(
+                      videoID: YoutubePlayer.convertUrlToId(data.strYouTube!)!),
+              customDivider(),
             ],
           );
         },

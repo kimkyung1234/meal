@@ -13,19 +13,24 @@ class Meal {
 }
 
 class Food {
-  Food(
-      {this.idMeal,
-      this.strMeal,
-      this.strCategory,
-      this.strInstructions,
-      this.strMealThumb,
-      this.strArea});
+  Food({
+    this.idMeal,
+    this.strMeal,
+    this.strCategory,
+    this.strInstructions,
+    this.strMealThumb,
+    this.strArea,
+    this.strTag,
+    this.strYouTube,
+  });
   String? idMeal;
   String? strMeal;
   String? strCategory;
   String? strInstructions;
   String? strMealThumb;
   String? strArea;
+  String? strTag;
+  String? strYouTube;
 
   factory Food.fromJson(Map<String, dynamic> json) => Food(
         idMeal: json['idMeal'],
@@ -34,6 +39,8 @@ class Food {
         strInstructions: json['strInstructions'],
         strMealThumb: json['strMealThumb'],
         strArea: json['strArea'],
+        strTag: json['strTags'],
+        strYouTube: json['strYoutube'],
       );
 
   Map<String, dynamic> toJson() => {
