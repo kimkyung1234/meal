@@ -21,7 +21,10 @@ class CategoryDetailPage extends StatelessWidget {
         elevation: 0,
         title: Text(
           strCategory,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(
+            color: Colors.black,
+            fontFamily: 'Comfortaa',
+          ),
         ),
         leading: const Padding(
           padding: EdgeInsets.only(left: 20),

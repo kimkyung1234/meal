@@ -19,7 +19,7 @@ class DetailPage extends StatelessWidget {
         elevation: 0,
         title: const Text(
           'Detail',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.black, fontFamily: 'Comfortaa'),
         ),
         leading: const Padding(
           padding: EdgeInsets.only(left: 20),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:meal/pages/home_page.dart';
 import 'package:meal/providers/page.dart';
-import 'package:meal/widgets/list/area_card_list.dart';
-import 'package:meal/pages/bookmark_list.dart';
-import 'package:meal/widgets/list/category_card_list.dart';
-import 'package:meal/widgets/card/random_card.dart';
+import 'package:meal/pages/bookmark_list_page.dart';
 import 'package:meal/widgets/common.dart';
 import 'package:meal/widgets/search_widget.dart';
 import 'package:provider/provider.dart';
@@ -15,38 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Widget> _children = [
-    ListView(
-      children: [
-        const SizedBox(height: 20),
-        flexibleText(
-          text: 'Home',
-          fontSize: 40,
-          fontFamily: 'Comfortaa',
-          fontWeight: FontWeight.bold,
-          padding: const EdgeInsets.all(15),
-          alignment: Alignment.topLeft,
-        ),
-        RandomCardWidget(),
-        flexibleText(
-          text: 'Area',
-          fontSize: 28,
-          fontFamily: 'Comfortaa',
-          fontWeight: FontWeight.bold,
-          padding: const EdgeInsets.all(15),
-          alignment: Alignment.topLeft,
-        ),
-        AreaCardListWidget(),
-        flexibleText(
-          text: 'Category',
-          fontSize: 28,
-          fontFamily: 'Comfortaa',
-          fontWeight: FontWeight.bold,
-          padding: const EdgeInsets.all(15),
-          alignment: Alignment.topLeft,
-        ),
-        CategoryCardListWidget(),
-      ],
-    ),
+    HomePageView(),
     BookmarkListPage(),
     Column(children: [
       const SizedBox(height: 120),
@@ -68,7 +35,7 @@ class _HomePageState extends State<HomePage> {
     var provider = Provider.of<Pages>(context);
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: _children[provider.getCurrentIndex],
       ),

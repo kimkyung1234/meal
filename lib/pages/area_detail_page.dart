@@ -20,7 +20,10 @@ class AreaDetailPage extends StatelessWidget {
         elevation: 0,
         title: Text(
           area,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(
+            color: Colors.black,
+            fontFamily: 'Comfortaa',
+          ),
         ),
         leading: const Padding(
           padding: EdgeInsets.only(left: 20),

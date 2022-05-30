@@ -20,7 +20,10 @@ class ResultPage extends StatelessWidget {
         elevation: 0,
         title: const Text(
           'Result',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(
+            color: Colors.black,
+            fontFamily: 'Comfortaa',
+          ),
         ),
         leading: const Padding(
           padding: EdgeInsets.only(left: 20),
