@@ -43,6 +43,7 @@ Widget flexibleText({
   FontWeight fontWeight = FontWeight.normal,
   AlignmentGeometry alignment = Alignment.center,
   TextOverflow? overflow,
+  String? fontFamily,
 }) {
   return Padding(
     padding: padding,
@@ -55,6 +56,7 @@ Widget flexibleText({
           fontWeight: fontWeight,
           fontSize: fontSize,
           color: textColor,
+          fontFamily: fontFamily,
         ),
       ),
     ),

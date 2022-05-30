@@ -6,7 +6,7 @@ import 'package:meal/widgets/common.dart';
 import 'package:meal/widgets/square_image.dart';
 import 'package:provider/provider.dart';
 
-class BookmarkList extends StatelessWidget {
+class BookmarkListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<DatabaseHelper>(context);
@@ -17,6 +17,7 @@ class BookmarkList extends StatelessWidget {
         flexibleText(
           text: 'Bookmark',
           fontSize: 40,
+          fontFamily: 'Comfortaa',
           fontWeight: FontWeight.bold,
           padding: const EdgeInsets.all(15),
           alignment: Alignment.topLeft,

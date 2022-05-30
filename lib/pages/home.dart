@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/providers/page.dart';
 import 'package:meal/widgets/list/area_card_list.dart';
-import 'package:meal/widgets/card/bookmark_list.dart';
+import 'package:meal/pages/bookmark_list.dart';
 import 'package:meal/widgets/list/category_card_list.dart';
 import 'package:meal/widgets/card/random_card.dart';
 import 'package:meal/widgets/common.dart';
@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
         flexibleText(
           text: 'Home',
           fontSize: 40,
+          fontFamily: 'Comfortaa',
           fontWeight: FontWeight.bold,
           padding: const EdgeInsets.all(15),
           alignment: Alignment.topLeft,
@@ -29,6 +30,7 @@ class _HomePageState extends State<HomePage> {
         flexibleText(
           text: 'Area',
           fontSize: 28,
+          fontFamily: 'Comfortaa',
           fontWeight: FontWeight.bold,
           padding: const EdgeInsets.all(15),
           alignment: Alignment.topLeft,
@@ -37,6 +39,7 @@ class _HomePageState extends State<HomePage> {
         flexibleText(
           text: 'Category',
           fontSize: 28,
+          fontFamily: 'Comfortaa',
           fontWeight: FontWeight.bold,
           padding: const EdgeInsets.all(15),
           alignment: Alignment.topLeft,
@@ -44,11 +47,12 @@ class _HomePageState extends State<HomePage> {
         CategoryCardListWidget(),
       ],
     ),
-    BookmarkList(),
+    BookmarkListPage(),
     Column(children: [
       const SizedBox(height: 120),
       flexibleText(
         text: 'Search',
+        fontFamily: 'Comfortaa',
         padding: const EdgeInsets.all(15),
         alignment: Alignment.topLeft,
         fontWeight: FontWeight.bold,
