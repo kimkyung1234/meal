@@ -11,7 +11,7 @@ class RandomCardWidget extends StatelessWidget {
       future: getRandomMealData(),
       builder: (_, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: customCircularIndicator());
+          return circularIndicatorWidget(height: 400);
         }
 
         final data = snapshot.data?.lists?[0];

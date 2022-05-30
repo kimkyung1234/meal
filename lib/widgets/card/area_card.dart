@@ -11,7 +11,7 @@ class AreaCardWidget extends StatelessWidget {
       future: getAreaList(),
       builder: (_, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: customCircularIndicator());
+          return circularIndicatorWidget(height: 85);
         }
 
         return SizedBox(

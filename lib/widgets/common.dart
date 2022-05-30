@@ -76,3 +76,10 @@ Widget customCircularIndicator() {
     valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
   );
 }
+
+Widget circularIndicatorWidget({required double height}) {
+  return SizedBox(
+    height: height,
+    child: Center(child: customCircularIndicator()),
+  );
+}
