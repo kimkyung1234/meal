@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
     var provider = Provider.of<Pages>(context);
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: _children[provider.getCurrentIndex],
       ),
@@ -75,6 +75,7 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: Colors.orange,
         onTap: provider.onTabTapped,
         currentIndex: provider.getCurrentIndex,
+        elevation: 0.0,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

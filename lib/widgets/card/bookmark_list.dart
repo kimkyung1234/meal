@@ -3,6 +3,7 @@ import 'package:meal/models/bookmark.dart';
 import 'package:meal/pages/detail_page.dart';
 import 'package:meal/providers/db_helper.dart';
 import 'package:meal/widgets/common.dart';
+import 'package:meal/widgets/square_image.dart';
 import 'package:provider/provider.dart';
 
 class BookmarkList extends StatelessWidget {
@@ -79,10 +80,7 @@ class BookmarkList extends StatelessWidget {
                         height: 130,
                         child: Row(
                           children: <Widget>[
-                            carryImageWidget(
-                              url: data?.url ?? '',
-                              boxFit: BoxFit.scaleDown,
-                            ),
+                            SquareImage(url: data?.url ?? ''),
                             const SizedBox(width: 10),
                             Flexible(
                               child: Column(
