@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:meal/providers/page.dart';
-import 'package:meal/widgets/card/area_card.dart';
+import 'package:meal/widgets/list/area_card_list.dart';
 import 'package:meal/widgets/card/bookmark_list.dart';
-import 'package:meal/widgets/card/category_card.dart';
+import 'package:meal/widgets/list/category_card_list.dart';
 import 'package:meal/widgets/card/random_card.dart';
 import 'package:meal/widgets/common.dart';
 import 'package:meal/widgets/search_widget.dart';
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(15),
           alignment: Alignment.topLeft,
         ),
-        AreaCardWidget(),
+        AreaCardListWidget(),
         flexibleText(
           text: 'Category',
           fontSize: 28,
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(15),
           alignment: Alignment.topLeft,
         ),
-        CategoryCardWidget(),
+        CategoryCardListWidget(),
       ],
     ),
     BookmarkList(),

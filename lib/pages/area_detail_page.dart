@@ -3,10 +3,11 @@ import 'package:meal/models/meal.dart';
 import 'package:meal/pages/detail_page.dart';
 import 'package:meal/services/api.dart';
 import 'package:meal/widgets/common.dart';
+import 'package:meal/widgets/square_image.dart';
 
-class AreaPage extends StatelessWidget {
+class AreaDetailPage extends StatelessWidget {
   final String area;
-  const AreaPage({
+  const AreaDetailPage({
     Key? key,
     required this.area,
   }) : super(key: key);
@@ -62,10 +63,7 @@ class AreaPage extends StatelessWidget {
                   height: 130,
                   child: Row(
                     children: <Widget>[
-                      carryImageWidget(
-                        url: data?.strMealThumb ?? '',
-                        boxFit: BoxFit.scaleDown,
-                      ),
+                      SquareImage(url: data?.strMealThumb ?? ''),
                       const SizedBox(width: 10),
                       Flexible(
                         child: Column(
