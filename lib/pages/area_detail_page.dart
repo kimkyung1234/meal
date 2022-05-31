@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/models.dart';
-import 'package:meal/pages/pages.dart';
 import 'package:meal/services/api.dart';
 import 'package:meal/widgets/widgets.dart';
 
@@ -41,49 +40,9 @@ class AreaDetailPage extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ));
           }
-          return ListView.separated(
-            separatorBuilder: (context, index) => const SizedBox(height: 14),
-            padding: const EdgeInsets.all(18),
-            itemCount: snapshot.data?.lists?.length ?? 0,
-            itemBuilder: (_, index) {
-              final data = snapshot.data?.lists?[index];
-              return GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DetailPage(
-                        id: data?.idMeal ?? '',
-                      ),
-                    ),
-                  );
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  height: 130,
-                  child: Row(
-                    children: <Widget>[
-                      SquareImage(url: data?.strMealThumb ?? ''),
-                      const SizedBox(width: 10),
-                      Flexible(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            flexibleText(
-                              text: data?.strMeal ?? '',
-                              alignment: Alignment.topLeft,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            },
+          return MealList(
+            snapshot: snapshot,
+            categorVisible: false,
           );
         },
       ),

@@ -24,7 +24,13 @@ class IngredientList extends StatelessWidget {
               ingredients[index] == '   ') {
             return const SizedBox();
           }
-          return Text('▪' + ingredients[index]);
+          return Text(
+            '▪' + ingredients[index],
+            style: const TextStyle(
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w100,
+            ),
+          );
         },
       ),
     );

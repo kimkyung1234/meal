@@ -40,6 +40,8 @@ class CategoryDetailPage extends StatelessWidget {
           const SizedBox(height: 10),
           flexibleText(
             text: strCategoryDescription,
+            fontFamily: 'Comfortaa',
+            fontWeight: FontWeight.w100,
             padding: const EdgeInsets.all(5),
           ),
           const SizedBox(height: 10),

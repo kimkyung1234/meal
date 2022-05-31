@@ -23,12 +23,15 @@ class BasicInfoWidget extends StatelessWidget {
             flexibleText(
               text: 'Category : ${mealData.strCategory}',
               fontSize: 13,
+              fontFamily: 'Comfortaa',
               padding: const EdgeInsets.only(left: 10, top: 10),
               alignment: Alignment.topLeft,
             ),
+            const SizedBox(height: 5),
             flexibleText(
               text: 'Area : ${mealData.strArea}',
               fontSize: 13,
+              fontFamily: 'Comfortaa',
               padding: const EdgeInsets.only(left: 10),
               alignment: Alignment.topLeft,
             ),

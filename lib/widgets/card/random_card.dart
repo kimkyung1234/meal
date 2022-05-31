@@ -36,7 +36,9 @@ class RandomCardWidget extends StatelessWidget {
                     child: Stack(
                       fit: StackFit.expand,
                       children: [
-                        carryImageWidget(url: data?.strMealThumb ?? ''),
+                        carryImageWidget(
+                            url: data?.strMealThumb ?? '',
+                            boxFit: BoxFit.cover),
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: const BorderRadius.all(
@@ -49,7 +51,7 @@ class RandomCardWidget extends StatelessWidget {
                                 Colors.white.withOpacity(0),
                                 Colors.white.withOpacity(0),
                                 Colors.white.withOpacity(0),
-                                Colors.black.withOpacity(0.2),
+                                Colors.black.withOpacity(0.38),
                                 Colors.black.withOpacity(0.5)
                               ],
                             ),
@@ -61,6 +63,7 @@ class RandomCardWidget extends StatelessWidget {
                                 text: data?.strMeal ?? '',
                                 fontSize: 30,
                                 textColor: Colors.white,
+                                fontFamily: 'Comfortaa',
                                 fontWeight: FontWeight.bold,
                                 alignment: Alignment.topLeft,
                                 padding: const EdgeInsets.all(20),

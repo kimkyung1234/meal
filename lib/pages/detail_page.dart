@@ -46,6 +46,7 @@ class DetailPage extends StatelessWidget {
               flexibleText(
                 text: data?.strMeal ?? '',
                 fontWeight: FontWeight.bold,
+                fontFamily: 'Comfortaa',
                 fontSize: 28,
                 alignment: Alignment.topLeft,
                 padding: const EdgeInsets.only(left: 10, top: 20),
@@ -57,7 +58,8 @@ class DetailPage extends StatelessWidget {
               customDivider(),
               flexibleText(
                 text: 'Ingredients',
-                fontWeight: FontWeight.bold,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w600,
                 fontSize: 26,
                 alignment: Alignment.topLeft,
                 padding: const EdgeInsets.only(left: 5, bottom: 10),
@@ -66,7 +68,8 @@ class DetailPage extends StatelessWidget {
               customDivider(),
               flexibleText(
                 text: 'Detail',
-                fontWeight: FontWeight.bold,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w600,
                 fontSize: 26,
                 alignment: Alignment.topLeft,
                 padding: const EdgeInsets.only(left: 5, bottom: 10),
@@ -74,6 +77,9 @@ class DetailPage extends StatelessWidget {
               flexibleText(
                 text: data.strInstructions ?? 'No data',
                 textColor: Colors.black87,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w100,
+                fontSize: 18,
                 padding: const EdgeInsets.all(5),
               ),
               const SizedBox(height: 25),

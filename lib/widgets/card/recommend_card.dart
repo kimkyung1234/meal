@@ -58,6 +58,7 @@ class RecommendCardWidget extends StatelessWidget {
                               text: data?.strMeal ?? '',
                               fontSize: 21,
                               textColor: Colors.white,
+                              fontFamily: 'Comfortaa',
                               fontWeight: FontWeight.bold,
                               alignment: Alignment.topLeft,
                               padding: const EdgeInsets.all(20),

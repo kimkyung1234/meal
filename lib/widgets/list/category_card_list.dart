@@ -56,8 +56,9 @@ class CategoryCardListWidget extends StatelessWidget {
                             flexibleText(
                               text: data?.strCategory ?? '',
                               fontSize: 20,
+                              fontFamily: 'Comfortaa',
+                              fontWeight: FontWeight.w500,
                               textColor: Colors.white,
-                              fontWeight: FontWeight.bold,
                               alignment: Alignment.topLeft,
                               padding: const EdgeInsets.all(20),
                             ),
