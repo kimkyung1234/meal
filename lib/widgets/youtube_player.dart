@@ -17,6 +17,7 @@ class Player extends StatelessWidget {
         controller: YoutubePlayerController(
           initialVideoId: videoID,
           flags: const YoutubePlayerFlags(
+            autoPlay: false,
             mute: false,
             disableDragSeek: false,
             loop: false,

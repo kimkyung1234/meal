@@ -43,7 +43,8 @@ class RecommendCardWidget extends StatelessWidget {
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      carryImageWidget(url: data?.strMealThumb ?? ''),
+                      carryImageWidget(
+                          url: data?.strMealThumb ?? '', boxFit: BoxFit.cover),
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.black.withOpacity(0.4),
