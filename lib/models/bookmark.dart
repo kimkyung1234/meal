@@ -14,7 +14,7 @@ class Bookmark {
         url = res['url'],
         name = res['name'];
 
-  Map<String, Object?> toMap() {
+  Map<String, dynamic> toMap() {
     return {
       'id': id,
       'url': url,

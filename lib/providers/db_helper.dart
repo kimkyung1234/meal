@@ -30,10 +30,15 @@ class DatabaseHelper extends ChangeNotifier {
 
   Future<List<Bookmark>> retrieveBookmark() async {
     final Database db = await initializeDB();
-    final List<Map<String, Object?>> queryResult = await db.query('bookmark');
+    final List<Map<String, dynamic>> queryResult = await db.query('bookmark');
 
-    var a = queryResult.map((e) => Bookmark.fromMap(e)).toList();
-    return a;
+    return List.generate(queryResult.length, (i) {
+      return Bookmark(
+        id: queryResult[i]['id'],
+        name: queryResult[i]['name'],
+        url: queryResult[i]['url'],
+      );
+    });
   }
 
   Future<void> deleteBookmark(int id) async {
