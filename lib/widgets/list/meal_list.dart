@@ -21,7 +21,10 @@ class MealList extends StatelessWidget {
       itemCount: snapshot.data?.lists?.length ?? 0,
       itemBuilder: (_, index) {
         final data = snapshot.data?.lists?[index];
-        return GestureDetector(
+        return InkWell(
+          customBorder: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
           onTap: () {
             Navigator.push(
               context,

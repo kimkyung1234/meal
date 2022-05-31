@@ -40,7 +40,10 @@ class BookmarkList extends StatelessWidget {
           onDismissed: (DismissDirection direction) async {
             await dbHelper.deleteBookmark(snapshot.data![index].id);
           },
-          child: GestureDetector(
+          child: InkWell(
+            customBorder: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
             onTap: () {
               Navigator.push(
                 context,
