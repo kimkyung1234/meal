@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal/models/meal.dart';
 import 'package:meal/services/api.dart';
-import 'package:meal/widgets/bookmark_button.dart';
+import 'package:meal/widgets/basic_info_widget.dart';
 import 'package:meal/widgets/common.dart';
 import 'package:meal/widgets/list/ingredient_list.dart';
 import 'package:meal/widgets/youtube_player.dart';
@@ -53,28 +53,9 @@ class DetailPage extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 padding: const EdgeInsets.only(left: 10, top: 20),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      flexibleText(
-                        text: 'Category : ${data?.strCategory}',
-                        fontSize: 13,
-                        padding: const EdgeInsets.only(left: 10, top: 10),
-                        alignment: Alignment.topLeft,
-                      ),
-                      flexibleText(
-                        text: 'Area : ${data?.strArea}',
-                        fontSize: 13,
-                        padding: const EdgeInsets.only(left: 10),
-                        alignment: Alignment.topLeft,
-                      ),
-                    ],
-                  ),
-                  BookmarkButton(id: id, data: data),
-                ],
+              BasicInfoWidget(
+                mealId: id,
+                mealData: data!,
               ),
               customDivider(),
               flexibleText(
@@ -84,7 +65,7 @@ class DetailPage extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 padding: const EdgeInsets.only(left: 5, bottom: 10),
               ),
-              IngredientList(ingredients: data!.ingredients!),
+              IngredientList(ingredients: data.ingredients!),
               customDivider(),
               flexibleText(
                 text: 'Detail',
@@ -99,7 +80,7 @@ class DetailPage extends StatelessWidget {
                 padding: const EdgeInsets.all(5),
               ),
               const SizedBox(height: 25),
-              data.strYouTube == null
+              data.strYouTube == "" || data.strYouTube == null
                   ? const SizedBox()
                   : Player(
                       videoID: YoutubePlayer.convertUrlToId(data.strYouTube!)!),

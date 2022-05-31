@@ -19,7 +19,9 @@ class IngredientList extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemCount: ingredients.length,
         itemBuilder: (context, index) {
-          if (ingredients[index] == ' - ') {
+          if (ingredients[index] == '  ' ||
+              ingredients[index] == ' ' ||
+              ingredients[index] == '   ') {
             return const SizedBox();
           }
           return Text('▪' + ingredients[index]);

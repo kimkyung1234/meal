@@ -39,7 +39,7 @@ class Food {
 
     for (int i = 1; i <= 20; i++) {
       if (json['strIngredient$i'] != null) {
-        ingredients.add('${json['strIngredient$i']} - ${json['strMeasure$i']}');
+        ingredients.add('${json['strIngredient$i']} ${json['strMeasure$i']}');
       } else {
         break;
       }
