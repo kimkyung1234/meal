@@ -3,6 +3,7 @@ import 'package:meal/models/meal.dart';
 import 'package:meal/services/api.dart';
 import 'package:meal/widgets/bookmark_button.dart';
 import 'package:meal/widgets/common.dart';
+import 'package:meal/widgets/list/ingredient_list.dart';
 import 'package:meal/widgets/youtube_player.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -77,16 +78,31 @@ class DetailPage extends StatelessWidget {
               ),
               customDivider(),
               flexibleText(
-                text: data?.strInstructions ?? 'No data',
+                text: 'Ingredients',
+                fontWeight: FontWeight.bold,
+                fontSize: 26,
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.only(left: 5, bottom: 10),
+              ),
+              IngredientList(ingredients: data!.ingredients!),
+              customDivider(),
+              flexibleText(
+                text: 'Detail',
+                fontWeight: FontWeight.bold,
+                fontSize: 26,
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.only(left: 5, bottom: 10),
+              ),
+              flexibleText(
+                text: data.strInstructions ?? 'No data',
                 textColor: Colors.black87,
                 padding: const EdgeInsets.all(5),
               ),
               const SizedBox(height: 25),
-              data!.strYouTube == null
+              data.strYouTube == null
                   ? const SizedBox()
                   : Player(
                       videoID: YoutubePlayer.convertUrlToId(data.strYouTube!)!),
-              customDivider(),
             ],
           );
         },

@@ -22,6 +22,7 @@ class Food {
     this.strArea,
     this.strTag,
     this.strYouTube,
+    this.ingredients,
   });
   String? idMeal;
   String? strMeal;
@@ -31,17 +32,31 @@ class Food {
   String? strArea;
   String? strTag;
   String? strYouTube;
+  List<String>? ingredients;
 
-  factory Food.fromJson(Map<String, dynamic> json) => Food(
-        idMeal: json['idMeal'],
-        strMeal: json['strMeal'],
-        strCategory: json['strCategory'],
-        strInstructions: json['strInstructions'],
-        strMealThumb: json['strMealThumb'],
-        strArea: json['strArea'],
-        strTag: json['strTags'],
-        strYouTube: json['strYoutube'],
-      );
+  factory Food.fromJson(Map<String, dynamic> json) {
+    final List<String> ingredients = [];
+
+    for (int i = 1; i <= 20; i++) {
+      if (json['strIngredient$i'] != null) {
+        ingredients.add('${json['strIngredient$i']} - ${json['strMeasure$i']}');
+      } else {
+        break;
+      }
+    }
+
+    return Food(
+      idMeal: json['idMeal'],
+      strMeal: json['strMeal'],
+      strCategory: json['strCategory'],
+      strInstructions: json['strInstructions'],
+      strMealThumb: json['strMealThumb'],
+      strArea: json['strArea'],
+      strTag: json['strTags'],
+      strYouTube: json['strYoutube'],
+      ingredients: ingredients,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         'idMeal': idMeal,
@@ -50,5 +65,6 @@ class Food {
         'strInstructions': strInstructions,
         'strMealThumb': strMealThumb,
         'strArea': strArea,
+        'ingredients': ingredients,
       };
 }
