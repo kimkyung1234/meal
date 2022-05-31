@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal/widgets/card/random_card.dart';
-import 'package:meal/widgets/common.dart';
-import 'package:meal/widgets/list/area_card_list.dart';
-import 'package:meal/widgets/list/category_card_list.dart';
+import 'package:meal/widgets/widgets.dart';
 
 class HomePageView extends StatelessWidget {
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:meal/models/meal.dart';
-import 'package:meal/pages/area_detail_page.dart';
+import 'package:meal/models/models.dart';
+import 'package:meal/pages/pages.dart';
 import 'package:meal/services/api.dart';
-import 'package:meal/widgets/common.dart';
+import 'package:meal/widgets/widgets.dart';
 
 class AreaCardListWidget extends StatelessWidget {
   @override

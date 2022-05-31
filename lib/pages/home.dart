@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meal/pages/home_page.dart';
-import 'package:meal/providers/page.dart';
-import 'package:meal/pages/bookmark_list_page.dart';
-import 'package:meal/widgets/common.dart';
-import 'package:meal/widgets/search_widget.dart';
+import 'package:meal/pages/pages.dart';
+import 'package:meal/providers/providers.dart';
+import 'package:meal/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {

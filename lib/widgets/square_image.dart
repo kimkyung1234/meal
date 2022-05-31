@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal/widgets/common.dart';
+import 'package:meal/widgets/widgets.dart';
 
 class SquareImage extends StatelessWidget {
   final String url;

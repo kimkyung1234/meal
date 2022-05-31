@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meal/models/meal.dart';
-import 'package:meal/widgets/bookmark_button.dart';
-import 'package:meal/widgets/common.dart';
+import 'package:meal/models/models.dart';
+import 'package:meal/widgets/widgets.dart';
 
 class BasicInfoWidget extends StatelessWidget {
   final int mealId;

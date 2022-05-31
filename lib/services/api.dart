@@ -1,8 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:meal/models/category.dart';
-import 'package:meal/models/meal.dart';
+import 'package:meal/models/models.dart';
 
 Future<Meal> getRandomMealData() async {
   final response = await get(

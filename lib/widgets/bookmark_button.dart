@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meal/models/bookmark.dart';
-import 'package:meal/models/meal.dart';
-import 'package:meal/providers/db_helper.dart';
-import 'package:meal/widgets/common.dart';
+import 'package:meal/models/models.dart';
+import 'package:meal/providers/providers.dart';
+import 'package:meal/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class BookmarkButton extends StatelessWidget {

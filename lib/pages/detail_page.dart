@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meal/models/meal.dart';
+import 'package:meal/models/models.dart';
 import 'package:meal/services/api.dart';
-import 'package:meal/widgets/basic_info_widget.dart';
-import 'package:meal/widgets/common.dart';
-import 'package:meal/widgets/list/ingredient_list.dart';
-import 'package:meal/widgets/youtube_player.dart';
+import 'package:meal/widgets/widgets.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class DetailPage extends StatelessWidget {

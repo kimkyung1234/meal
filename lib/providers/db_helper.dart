@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:meal/models/bookmark.dart';
+import 'package:meal/models/models.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 

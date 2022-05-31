@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal/pages/result_page.dart';
+import 'package:meal/pages/pages.dart';
 
 class SearchWidget extends StatelessWidget {
   @override

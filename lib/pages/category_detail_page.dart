@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meal/widgets/card/recommend_card.dart';
-import 'package:meal/widgets/common.dart';
+import 'package:meal/widgets/widgets.dart';
 
 class CategoryDetailPage extends StatelessWidget {
   final String strCategory;
