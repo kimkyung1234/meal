@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 Widget carryImageWidget(
@@ -21,13 +22,14 @@ Widget carryImageWidget(
         height: 100,
         width: 100,
         margin: const EdgeInsets.fromLTRB(0, 50, 0, 50),
-        child: Center(
-          child: CircularProgressIndicator(
-            valueColor: const AlwaysStoppedAnimation<Color>(Colors.orange),
-            value: loadingProgress.expectedTotalBytes != null
-                ? loadingProgress.cumulativeBytesLoaded /
-                    loadingProgress.expectedTotalBytes!
-                : null,
+        child: const Center(
+          child: CupertinoActivityIndicator(
+            color: Colors.orange,
+            // valueColor: const AlwaysStoppedAnimation<Color>(Colors.orange),
+            // value: loadingProgress.expectedTotalBytes != null
+            //     ? loadingProgress.cumulativeBytesLoaded /
+            //         loadingProgress.expectedTotalBytes!
+            //     : null,
           ),
         ),
       );
@@ -74,8 +76,11 @@ Widget customDivider() {
 }
 
 Widget customCircularIndicator() {
-  return const CircularProgressIndicator(
-    valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+  // return const CircularProgressIndicator(
+  //   valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+  // );
+  return const CupertinoActivityIndicator(
+    color: Colors.orange,
   );
 }
 
