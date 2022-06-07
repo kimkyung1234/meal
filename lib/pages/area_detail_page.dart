@@ -5,10 +5,13 @@ import 'package:meal/widgets/widgets.dart';
 
 class AreaDetailPage extends StatelessWidget {
   final String area;
-  const AreaDetailPage({
+
+  AreaDetailPage({
     Key? key,
     required this.area,
   }) : super(key: key);
+
+  TextEditingController editingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +30,19 @@ class AreaDetailPage extends StatelessWidget {
           padding: EdgeInsets.only(left: 20),
           child: BackButton(color: Colors.black),
         ),
+        actions: [
+          // Padding(
+          //   padding: const EdgeInsets.only(right: 10),
+          //   child: IconButton(
+          //     icon: const Icon(
+          //       Icons.search,
+          //       color: Colors.black,
+          //       size: 28,
+          //     ),
+          //     onPressed: () {},
+          //   ),
+          // ),
+        ],
       ),
       body: FutureBuilder<Meal>(
         future: getMealDataByArea(area: area),
@@ -41,7 +57,7 @@ class AreaDetailPage extends StatelessWidget {
             ));
           }
           return MealList(
-            snapshot: snapshot,
+            dataList: snapshot.data!.lists!,
             categorVisible: false,
           );
         },

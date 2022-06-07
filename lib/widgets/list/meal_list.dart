@@ -4,12 +4,12 @@ import 'package:meal/pages/pages.dart';
 import 'package:meal/widgets/widgets.dart';
 
 class MealList extends StatelessWidget {
-  final AsyncSnapshot<Meal> snapshot;
+  final List<Food> dataList;
   final bool categorVisible;
 
   const MealList({
     Key? key,
-    required this.snapshot,
+    required this.dataList,
     this.categorVisible = true,
   }) : super(key: key);
 
@@ -18,9 +18,9 @@ class MealList extends StatelessWidget {
     return ListView.separated(
       separatorBuilder: (context, index) => const SizedBox(height: 14),
       padding: const EdgeInsets.all(18),
-      itemCount: snapshot.data?.lists?.length ?? 0,
+      itemCount: dataList.length,
       itemBuilder: (_, index) {
-        final data = snapshot.data?.lists?[index];
+        final data = dataList[index];
         return InkWell(
           customBorder: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
@@ -30,7 +30,7 @@ class MealList extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => DetailPage(
-                  id: data?.idMeal ?? '',
+                  id: data.idMeal ?? '',
                 ),
               ),
             );
@@ -42,14 +42,14 @@ class MealList extends StatelessWidget {
             height: 130,
             child: Row(
               children: <Widget>[
-                SquareImage(url: data?.strMealThumb ?? ''),
+                SquareImage(url: data.strMealThumb ?? ''),
                 const SizedBox(width: 10),
                 Flexible(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       flexibleText(
-                        text: data?.strMeal ?? '',
+                        text: data.strMeal ?? '',
                         fontFamily: 'Comfortaa',
                         fontWeight: FontWeight.w600,
                         alignment: Alignment.topLeft,
@@ -57,7 +57,7 @@ class MealList extends StatelessWidget {
                       ),
                       categorVisible
                           ? flexibleText(
-                              text: data?.strCategory ?? '',
+                              text: data.strCategory ?? '',
                               fontFamily: 'Comfortaa',
                               fontWeight: FontWeight.w300,
                               fontSize: 14,

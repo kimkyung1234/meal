@@ -40,7 +40,7 @@ class ResultPage extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ));
           }
-          return MealList(snapshot: snapshot);
+          return MealList(dataList: snapshot.data!.lists!);
         },
       ),
     );
